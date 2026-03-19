@@ -1,0 +1,33 @@
+@use '@shared/styles/main.scss' as *;
+
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.website-logo-container {
+    width: 267px;
+    height: 40px;
+    background-image: url('@shared/assets/images/logo-large.svg');
+}
+
+.personal-score-container {
+    flex: 2;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: $thirdary-text-color;
+}
+
+.cup-icon {
+    width: 21px;
+    height: 18px;
+    padding-right: 0.5em;
+    background-image: url('@shared/assets/images/icon-personal-best.svg');
+    background-repeat: no-repeat;
+}
+
+.score {
+    padding-left: 0.2em;
+    color: $secondary-text-color;
+}
