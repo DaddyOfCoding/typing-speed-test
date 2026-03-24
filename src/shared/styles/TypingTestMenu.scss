@@ -1,0 +1,67 @@
+@use '@shared/styles/main.scss' as *;
+
+.typing-test-menu-container,
+.left-side-container,
+.right-side-container,
+.difficulty-selector,
+.difficulty-buttons-container,
+.mode-selector-buttons-container,
+.mode-selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.typing-test-menu-container {
+    padding-top: 50px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $table-border-color;
+}
+
+.left-side-container {
+    flex-grow: 1;
+    justify-content: start;
+    align-items: center;
+}
+
+.word-per-minute-container > span,
+.accuracy-container > span,
+.time-left-container > span {
+    color: $primary-text-color;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 8px;
+}
+
+.word-per-minute-container {
+    padding-right: 20px;
+}
+
+.accuracy-container,
+.time-left-container {
+    border-left: 1px solid $table-border-color;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.right-side-container {
+    flex-grow: 1;
+    justify-content: end;
+    align-items: center;
+}
+
+.difficulty-selector {
+    padding-right: 12px;
+}
+
+.difficulty-selector,
+.mode-selector,
+.difficulty-buttons-container,
+.mode-selector-buttons-container {
+    gap: 5px;
+}
+
+.mode-selector {
+    padding-left: 12px;
+    border-left: 1px solid $table-border-color;
+}

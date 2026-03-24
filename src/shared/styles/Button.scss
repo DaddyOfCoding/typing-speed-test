@@ -1,0 +1,30 @@
+@use '@shared/styles/main.scss' as *;
+
+button {
+    border: none;
+    background: none;
+    padding: 0;
+    font-family: Sora;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+button[data-variant='ghost'] {
+    color: $primary-text-color;
+    border: 1px solid $ghost-button-border-color;
+    border-radius: 8px;
+    padding-block: 5px;
+    padding-inline: 10px;
+}
+
+button[data-variant='ghost']:hover {
+    color: $ghost-button-selected-color;
+    border: 1px solid $ghost-button-selected-color;
+}
+
+button[data-variant='ghost']:focus {
+    outline: 2px solid $button-focus-outline-color;
+    outline-offset: 2px;
+    border-color: $button-focus-border-color;
+}
