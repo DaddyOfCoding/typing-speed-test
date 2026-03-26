@@ -1,0 +1,26 @@
+@use '@shared/styles/main.scss' as *;
+
+.test-text-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    &__test-text-field {
+        margin-top: 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        flex: 1;
+        font-size: 30px;
+    }
+
+    &__restart-test-button-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+}
+
+.border-block {
+    border-block: 1px solid $table-border-color;
+}
