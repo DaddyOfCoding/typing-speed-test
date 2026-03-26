@@ -16,15 +16,15 @@ button[data-variant='ghost'] {
     border-radius: 8px;
     padding-block: 5px;
     padding-inline: 10px;
-}
 
-button[data-variant='ghost']:hover {
-    color: $ghost-button-selected-color;
-    border: 1px solid $ghost-button-selected-color;
-}
+    &:hover {
+        color: $ghost-button-selected-color;
+        border: 1px solid $ghost-button-selected-color;
+    }
 
-button[data-variant='ghost']:focus {
-    outline: 2px solid $button-focus-outline-color;
-    outline-offset: 2px;
-    border-color: $button-focus-border-color;
+    &:focus {
+        outline: 2px solid $button-focus-outline-color;
+        outline-offset: 2px;
+        border-color: $button-focus-border-color;
+    }
 }

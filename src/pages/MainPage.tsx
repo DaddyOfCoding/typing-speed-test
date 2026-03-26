@@ -1,7 +1,9 @@
+import TypingTestMenu from '@features/TypingTestMenu/TypingTestMenu';
+
 function MainPage() {
     return (
         <section className='typing-test-container'>
-            <div className='typing-test-menu'></div>
+            <TypingTestMenu />
             <div className='typing-test-text'></div>
         </section>
     );

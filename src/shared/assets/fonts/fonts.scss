@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Sora-VariableFont_wght';
+    font-family: 'Sora';
     src: url('@shared/assets/fonts/Sora-VariableFont_wght.ttf')
         format('truetype');
     font-weight: normal;
@@ -7,22 +7,22 @@
 }
 
 @font-face {
-    font-family: 'Sora-Regular';
+    font-family: 'Sora';
     src: url('@shared/assets/fonts/static/Sora-Regular.ttf') format('truetype');
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Sora-SemiBold';
+    font-family: 'Sora';
     src: url('@shared/assets/fonts/static/Sora-SemiBold.ttf') format('truetype');
-    font-weight: 200;
+    font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Sora-Bold';
+    font-family: 'Sora';
     src: url('@shared/assets/fonts/static/Sora-Bold.ttf') format('truetype');
-    font-weight: 300;
+    font-weight: 700;
     font-style: normal;
 }

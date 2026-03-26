@@ -3,24 +3,24 @@ import Button from '@shared/ui/Button.tsx';
 
 function TypingTestMenu() {
     return (
-        <div className='typing-test-menu-container'>
-            <div className='left-side-container'>
-                <span className='word-per-minute-container'>
+        <div className='typing-test-menu'>
+            <div className='typing-test-menu__left gap-5'>
+                <span className='typing-test-menu__metric padding-right-10'>
                     WPM: <span>{'0'}</span>
                 </span>
-                <span className='accuracy-container'>
+                <span className='typing-test-menu__metric padding-left-10 padding-right-10 border-left'>
                     Accuracy: <span>{'100%'}</span>
                 </span>
-                <span className='time-left-container'>
+                <span className='typing-test-menu__metric padding-left-10 border-left'>
                     Time: <span>{'0:60'}</span>
                 </span>
             </div>
-            <div className='right-side-container'>
-                <div className='difficulty-selector'>
+            <div className='typing-test-menu__right gap-5'>
+                <div className='typing-test-menu__difficulty-selector gap-5 padding-right-10'>
                     <span>Difficulty: </span>
-                    <div className='difficulty-buttons-container'>
+                    <div className='typing-test-menu__difficulty-buttons gap-5'>
                         <Button
-                            className='difficulty'
+                            className='difficulty border-left'
                             variant='ghost'
                             buttonContent='Easy'
                         />
@@ -36,9 +36,9 @@ function TypingTestMenu() {
                         />
                     </div>
                 </div>
-                <div className='mode-selector'>
+                <div className='typing-test-menu__mode-selector gap-5 padding-left-10 border-left'>
                     <span>Mode:</span>
-                    <div className='mode-selector-buttons-container'>
+                    <div className='typing-test-menu__mode-buttons gap-5'>
                         <Button
                             className='mode'
                             variant='ghost'
