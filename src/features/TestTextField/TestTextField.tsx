@@ -11,9 +11,8 @@ function TestTextField() {
             <div className='test-text-container__restart-test-button-container'>
                 <Button
                     className='test-text-container__restart-test-button'
-                    buttonContent=<>
-                        Restart Test <VscDebugRestart />
-                    </>
+                    buttonContent=<>Restart Test</>
+                    buttonIcon=<VscDebugRestart />
                     variant='secondary'
                 />
             </div>

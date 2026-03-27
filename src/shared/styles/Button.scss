@@ -1,6 +1,11 @@
 @use '@shared/styles/main.scss' as *;
+@use '@shared/assets/fonts/fonts.scss' as *;
 
 button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     border: none;
     background: none;
     padding: 0;
@@ -8,6 +13,36 @@ button {
     font-size: 14px;
     font-weight: normal;
     margin: 0;
+}
+
+button[data-variant='primary'] {
+    color: $primary-text-color;
+
+    &:hover {
+        color: $ghost-button-selected-color;
+        border: 1px solid $ghost-button-selected-color;
+    }
+
+    &:focus {
+        outline: 2px solid $button-focus-outline-color;
+        outline-offset: 2px;
+        border-color: $button-focus-border-color;
+    }
+}
+
+button[data-variant='secondary'] {
+    color: $primary-text-color;
+    background-color: $secondary-button-background-color;
+    border-radius: 8px;
+    padding-block: 15px;
+    padding-inline: 15px;
+    font-size: 18px;
+    font-family: sora;
+    font-weight: 600;
+
+    &:hover {
+        background-color: $secondary-button-hover-background-color;
+    }
 }
 
 button[data-variant='ghost'] {
@@ -27,4 +62,11 @@ button[data-variant='ghost'] {
         outline-offset: 2px;
         border-color: $button-focus-border-color;
     }
+}
+
+.button-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
 }

@@ -1,10 +1,28 @@
 @use '@shared/styles/main.scss' as *;
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     background-color: $primary-background-color;
     font-family: Sora;
     font-weight: 400;
     color: $thirdary-text-color;
+}
+
+#root {
     padding-top: 25px;
     padding-inline: 70px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
