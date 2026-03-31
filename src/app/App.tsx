@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '@shared/styles/App.scss';
-import Header from '@features/Header/Header.tsx';
+import Header from '@widgets/Header/Header';
 import MainPage from '@pages/MainPage.tsx';
 
 function App() {
