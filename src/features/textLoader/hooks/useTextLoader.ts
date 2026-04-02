@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import loadTextApi, {
     type loadTextApiTypes,
 } from '@features/textLoader/api/loadTextApi.ts';
@@ -15,21 +15,15 @@ const useTextLoader = (difficulty: 'easy' | 'medium' | 'hard'): string => {
         fetchTestText();
     }, []);
 
-    if (!data) {
-        return 'loading';
-    }
+    const selectedText = useMemo(() => {
+        if (!data) {
+            return 'loading';
+        }
 
-    if (difficulty === 'easy') {
         return selectRandomTextByDifficulty(data, difficulty);
-    }
-    if (difficulty === 'medium') {
-        return selectRandomTextByDifficulty(data, difficulty);
-    }
-    if (difficulty === 'hard') {
-        return selectRandomTextByDifficulty(data, difficulty);
-    }
+    }, [data, difficulty]);
 
-    return '';
+    return selectedText;
 };
 
 export default useTextLoader;
