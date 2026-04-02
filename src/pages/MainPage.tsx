@@ -10,7 +10,7 @@ function MainPage() {
         'easy',
     );
     const [isTestStarted, setStarted] = useState<true | false>(false);
-    const [currentTimeLeft, setTime] = useState<number>(10);
+    const [currentTimeLeft, setTime] = useState<number>(60);
     const textData = useTextLoader(difficulty);
 
     return (

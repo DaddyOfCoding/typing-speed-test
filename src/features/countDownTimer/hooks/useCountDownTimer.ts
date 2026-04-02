@@ -24,7 +24,6 @@ function useCountDownTimer(
         return () => clearInterval(intervalID);
     }, [isTestStarted, setStarted, setTime]);
 
-    console.log(currentTimeLeft);
     return currentTimeLeft;
 }
 

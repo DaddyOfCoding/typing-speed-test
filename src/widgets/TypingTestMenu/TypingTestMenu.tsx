@@ -2,6 +2,7 @@ import '@shared/styles/TypingTestMenu.scss';
 import Button from '@shared/ui/Button.tsx';
 import React, { useState } from 'react';
 import useCountDownTimer from '@features/countDownTimer/hooks/useCountDownTimer';
+import countDownTimerFormater from '@features/countDownTimer/utils/countDownTimerFormater';
 
 type DifficultyTypes = {
     currentDifficulty: 'easy' | 'medium' | 'hard';
@@ -43,7 +44,7 @@ function TypingTestMenu({
                     Accuracy: <span>{'100%'}</span>
                 </span>
                 <span className='typing-test-menu__metric padding-left-10 border-left'>
-                    Time: <span>0:60</span>
+                    Time: <span>{countDownTimerFormater(currentTimeLeft)}</span>
                 </span>
             </div>
             <div className='typing-test-menu__right gap-5'>

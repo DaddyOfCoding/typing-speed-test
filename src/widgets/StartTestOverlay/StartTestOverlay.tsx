@@ -32,7 +32,7 @@ function StartTestOverlay({
                         buttonContent='Start Typing Test'
                         variant='primary'
                         onClick={() => {
-                            setTime(10);
+                            setTime(60);
                             setStarted(true);
                         }}
                     />
