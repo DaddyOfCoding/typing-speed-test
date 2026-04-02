@@ -1,0 +1,25 @@
+@use '@shared/styles/main.scss' as *;
+.overlay-container {
+    display: flex;
+    position: relative;
+    flex: 1;
+}
+
+.overlay-wrapper {
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% - 30px);
+    backdrop-filter: blur(4px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__additionary-text {
+        padding-top: 15px;
+        color: $primary-text-color;
+    }
+}

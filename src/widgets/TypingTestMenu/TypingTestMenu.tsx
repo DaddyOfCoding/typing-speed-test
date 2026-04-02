@@ -1,12 +1,38 @@
 import '@shared/styles/TypingTestMenu.scss';
 import Button from '@shared/ui/Button.tsx';
+import React, { useState } from 'react';
+import useCountDownTimer from '@features/countDownTimer/hooks/useCountDownTimer';
 
-type difficultyTypes = {
+type DifficultyTypes = {
     currentDifficulty: 'easy' | 'medium' | 'hard';
     setDifficulty: (value: 'easy' | 'medium' | 'hard') => void;
 };
 
-function TypingTestMenu({ currentDifficulty, setDifficulty }: difficultyTypes) {
+type CurrentTimeTypes = {
+    currentTimeLeft: number;
+    setTime: React.Dispatch<React.SetStateAction<number>>;
+};
+
+type TypingTestMenuTypes = DifficultyTypes &
+    CurrentTimeTypes & {
+        isTestStarted: boolean;
+        setStarted: React.Dispatch<React.SetStateAction<boolean>>;
+    };
+
+function TypingTestMenu({
+    currentDifficulty,
+    setDifficulty,
+    isTestStarted,
+    setStarted,
+    currentTimeLeft,
+    setTime,
+}: TypingTestMenuTypes) {
+    const [focusedMode, setModeFocus] = useState<'timed' | 'passage' | null>(
+        'timed',
+    );
+
+    useCountDownTimer(isTestStarted, setStarted, currentTimeLeft, setTime);
+
     return (
         <div className='typing-test-menu'>
             <div className='typing-test-menu__left gap-5'>
@@ -17,7 +43,7 @@ function TypingTestMenu({ currentDifficulty, setDifficulty }: difficultyTypes) {
                     Accuracy: <span>{'100%'}</span>
                 </span>
                 <span className='typing-test-menu__metric padding-left-10 border-left'>
-                    Time: <span>{'0:60'}</span>
+                    Time: <span>0:60</span>
                 </span>
             </div>
             <div className='typing-test-menu__right gap-5'>
@@ -25,7 +51,7 @@ function TypingTestMenu({ currentDifficulty, setDifficulty }: difficultyTypes) {
                     <span>Difficulty: </span>
                     <div className='typing-test-menu__difficulty-buttons gap-5'>
                         <Button
-                            className='difficulty border-left'
+                            className={`difficulty border-left ${currentDifficulty === 'easy' ? 'focused' : ''}`}
                             variant='ghost'
                             buttonContent='Easy'
                             onClick={() => {
@@ -33,9 +59,11 @@ function TypingTestMenu({ currentDifficulty, setDifficulty }: difficultyTypes) {
                                     setDifficulty('easy');
                                 }
                             }}
+                            onFocus={() => setDifficulty('easy')}
+                            disabled={isTestStarted === true}
                         />
                         <Button
-                            className='difficulty'
+                            className={`difficulty ${currentDifficulty === 'medium' ? 'focused' : ''}`}
                             variant='ghost'
                             buttonContent='Medium'
                             onClick={() => {
@@ -43,9 +71,11 @@ function TypingTestMenu({ currentDifficulty, setDifficulty }: difficultyTypes) {
                                     setDifficulty('medium');
                                 }
                             }}
+                            onFocus={() => setDifficulty('medium')}
+                            disabled={isTestStarted === true}
                         />
                         <Button
-                            className='difficulty'
+                            className={`difficulty ${currentDifficulty === 'hard' ? 'focused' : ''}`}
                             variant='ghost'
                             buttonContent='Hard'
                             onClick={() => {
@@ -53,6 +83,8 @@ function TypingTestMenu({ currentDifficulty, setDifficulty }: difficultyTypes) {
                                     setDifficulty('hard');
                                 }
                             }}
+                            onFocus={() => setDifficulty('hard')}
+                            disabled={isTestStarted === true}
                         />
                     </div>
                 </div>
@@ -60,14 +92,18 @@ function TypingTestMenu({ currentDifficulty, setDifficulty }: difficultyTypes) {
                     <span>Mode:</span>
                     <div className='typing-test-menu__mode-buttons gap-5'>
                         <Button
-                            className='mode'
+                            className={`mode ${focusedMode === 'timed' ? 'focused' : ''}`}
                             variant='ghost'
-                            buttonContent='Time (60s)'
+                            buttonContent='Timed (60s)'
+                            onFocus={() => setModeFocus('timed')}
+                            disabled={isTestStarted === true}
                         />
                         <Button
-                            className='mode'
+                            className={`mode ${focusedMode === 'passage' ? 'focused' : ''}`}
                             variant='ghost'
                             buttonContent='Passage'
+                            onFocus={() => setModeFocus('passage')}
+                            disabled={isTestStarted === true}
                         />
                     </div>
                 </div>

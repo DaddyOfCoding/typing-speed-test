@@ -4,9 +4,10 @@ import { VscDebugRestart } from 'react-icons/vsc';
 
 type TestFieldProps = {
     textToView: string;
+    isTestStarted: boolean;
 };
 
-function TestTextField({ textToView }: TestFieldProps) {
+function TestTextField({ textToView, isTestStarted }: TestFieldProps) {
     console.log(textToView);
     return (
         <div className='test-text-container'>
@@ -15,7 +16,7 @@ function TestTextField({ textToView }: TestFieldProps) {
             </div>
             <div className='test-text-container__restart-test-button-container'>
                 <Button
-                    className='test-text-container__restart-test-button'
+                    className={`test-text-container__restart-test-button ${isTestStarted === false ? 'hidden' : ''}`}
                     buttonContent=<>Restart Test</>
                     buttonIcon=<VscDebugRestart />
                     variant='secondary'

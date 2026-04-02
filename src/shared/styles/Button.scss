@@ -16,11 +16,15 @@ button {
 }
 
 button[data-variant='primary'] {
+    font-size: 18px;
     color: $primary-text-color;
+    background-color: $primary-button-background-color;
+    border-radius: 10px;
+    padding-inline: 15px;
+    padding-block: 12px;
 
     &:hover {
-        color: $ghost-button-selected-color;
-        border: 1px solid $ghost-button-selected-color;
+        background-color: $primary-button-hover-background-color;
     }
 
     &:focus {
@@ -57,7 +61,8 @@ button[data-variant='ghost'] {
         border: 1px solid $ghost-button-selected-color;
     }
 
-    &:focus {
+    &:focus,
+    &.focused {
         outline: 2px solid $button-focus-outline-color;
         outline-offset: 2px;
         border-color: $button-focus-border-color;
@@ -69,4 +74,8 @@ button[data-variant='ghost'] {
     justify-content: center;
     align-items: center;
     font-size: 23px;
+}
+
+.hidden {
+    display: none;
 }
