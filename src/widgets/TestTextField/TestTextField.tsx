@@ -11,12 +11,14 @@ function TestTextField({ textToView, isTestStarted }: TestFieldProps) {
     console.log(textToView);
     return (
         <div className='test-text-container'>
-            <div className='test-text-container__test-text-field border-block'>
+            <div className='test-text-container__test-text-field border-top'>
                 <span>{textToView}</span>
             </div>
-            <div className='test-text-container__restart-test-button-container'>
+            <div
+                className={`test-text-container__restart-test-button-container border-top ${isTestStarted === false ? 'hidden' : ''}`}
+            >
                 <Button
-                    className={`test-text-container__restart-test-button ${isTestStarted === false ? 'hidden' : ''}`}
+                    className='test-text-container__restart-test-button'
                     buttonContent=<>Restart Test</>
                     buttonIcon=<VscDebugRestart />
                     variant='secondary'

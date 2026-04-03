@@ -21,6 +21,10 @@
     }
 }
 
-.border-block {
-    border-block: 1px solid $table-border-color;
+.border-top {
+    border-top: 1px solid $table-border-color;
+}
+
+.hidden {
+    display: none;
 }
