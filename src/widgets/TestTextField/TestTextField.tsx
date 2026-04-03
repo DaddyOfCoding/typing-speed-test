@@ -1,13 +1,19 @@
 import '@shared/styles/TestTextField.scss';
 import Button from '@shared/ui/Button.tsx';
+import type React from 'react';
 import { VscDebugRestart } from 'react-icons/vsc';
 
 type TestFieldProps = {
     textToView: string;
     isTestStarted: boolean;
+    setStarted: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function TestTextField({ textToView, isTestStarted }: TestFieldProps) {
+function TestTextField({
+    textToView,
+    isTestStarted,
+    setStarted,
+}: TestFieldProps) {
     console.log(textToView);
     return (
         <div className='test-text-container'>
@@ -22,6 +28,7 @@ function TestTextField({ textToView, isTestStarted }: TestFieldProps) {
                     buttonContent=<>Restart Test</>
                     buttonIcon=<VscDebugRestart />
                     variant='secondary'
+                    onClick={() => setStarted(false)}
                 />
             </div>
         </div>

@@ -21,7 +21,9 @@ function StartTestOverlay({
         <div
             className='overlay-container'
             onClick={() => {
-                setStarted(true);
+                if (!isTestStarted) {
+                    setStarted(true);
+                }
             }}
         >
             {children}

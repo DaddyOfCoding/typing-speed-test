@@ -31,6 +31,7 @@ function MainPage() {
                 <TestTextField
                     textToView={textData}
                     isTestStarted={isTestStarted}
+                    setStarted={setStarted}
                 />
             </StartTestOverlay>
         </section>
